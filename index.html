@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <span class="logo">&lt;Dev/&gt;</span>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero container">
+    <h1>Hi, I'm <span class="highlight">[Aunabil]</span></h1>
+    <p class="subtitle">Software Developer specializing in desktop utilities, cross-platform apps, and automation tools.</p>
+    <p class="tech-stack-hint">
+      <strong>Environment &amp; Tooling:</strong> Windows &bull; Windows Subsystem for Linux (WSL) running Ubuntu &bull; Bash CLI &bull; Git/GitHub
+    </p>
+    <div class="social-links">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:your.email@example.com">Email</a>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section container">
+    <h2>Projects</h2>
+    <!-- Dynamic Projects Grid -->
+    <div class="projects-grid" id="projects-grid"></div>
+  </section>
+
+  <section class="projects-section container ongoing-section">
+    <h2>In Development</h2>
+    <div class="projects-grid" id="ongoing-grid"></div>
+  </section>
+
+  <!-- Floating Expanded Card Modal -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true">
+    <button class="modal-nav nav-prev" id="modal-prev" aria-label="Previous project">&#10094;</button>
+    <button class="modal-nav nav-next" id="modal-next" aria-label="Next project">&#10095;</button>
+
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      
+      <!-- Content Wrapper for Smooth Fade Transition -->
+      <div class="modal-content-wrap" id="modal-content-wrap">
+        <!-- Interactive Media Carousel Header -->
+        <div class="modal-media-container">
+          <button class="carousel-nav carousel-prev" id="carousel-prev" aria-label="Previous slide">&#10094;</button>
+          
+          <div class="modal-carousel" id="modal-carousel">
+            <!-- Images/GIFs dynamically injected via JS -->
+          </div>
+
+          <button class="carousel-nav carousel-next" id="carousel-next" aria-label="Next slide">&#10095;</button>
+
+          <!-- Slide Indicators (Dots) -->
+          <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+
+        <!-- Modal Card Details -->
+        <div class="modal-body">
+          <h2 id="modal-title"></h2>
+          <div class="tags" id="modal-tags"></div>
+          <p id="modal-description"></p>
+          
+          <div class="modal-meta" id="modal-details">
+            <!-- Key details injected via JS -->
+          </div>
+
+          <div class="modal-actions">
+            <a id="modal-github" href="#" target="_blank" rel="noopener" class="btn btn-primary">View Repository on GitHub</a>
+            <a id="modal-demo" href="#" target="_blank" rel="noopener" class="btn btn-secondary" style="display: none;">Live Demo / Build</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Designed & Built with Plain HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
