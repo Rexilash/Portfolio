@@ -1,86 +1,103 @@
-// Targeted Project Data Array
 const ongoingProjects = [
   {
     id: "game-launcher",
     title: "Lightweight Game Launcher",
-    shortDescription: "Customizable, resource-efficient desktop launcher tailored for fast game organization and execution.",
+    shortDescription: "A weekend side project building a simple, no-frills game launcher to organize my local library.",
     tags: ["Desktop", "UI/UX", "Performance"]
   },
-  {
-    id: "resolution-projector",
-    title: "Window Coordinate Projector",
-    shortDescription: "Rendering utility that captures target window regions and projects them onto a scaled, high-res canvas.",
-    tags: ["Systems", "Graphics", "Desktop"]
-  }
 ];
 
 const projects = [
   {
     id: "visualizer",
     title: "Visualizer",
-    shortDescription: "Cross-platform Flutter application using a Python backend for real-time audio visualization.",
-    fullDescription: "Built to explore cross-platform desktop UI in Flutter combined with high-performance process orchestration. The frontend handles state and audio configuration, while communicating with an isolated Python pipeline for real-time audio frame rendering.",
+    shortDescription: "A cross-platform app journey. Started in Python, added Flutter, and battled Windows firewalls along the way.",
+    fullDescription: "This project was a massive learning journey. I originally built the whole thing in Python using Tkinter just to figure out audio rendering. Wanting a cleaner desktop UI, I ported the frontend to Flutter and initially looked at built-in Python bridges. For an extra challenge, I tried running a local backend server route, but ran straight into a wall with Windows networking and firewall blocks. That forced me to step back and rethink the architecture. I finally restructured the Python backend into a clean CLI-like binary that communicates smoothly without triggering local server or firewall issues.",
     tags: ["Flutter", "Python", "Desktop", "Linux/WSL"],
     github: "https://github.com/Rexilash/Visualizer",
     demo: "#",
     media: [
-      "assets/final/VisualizerSynthEdit.png",
-      "assets/final/VisualizerSakuraEdit.png",
-      "assets/final/VisualizerNoirEdit.png"
+      "assets/VisualizerSynthEdit.png",
+      "assets/VisualizerSakuraEdit.png",
+      "assets/VisualizerNoirEdit.png"
     ],
     highlights: [
-      "Designed desktop layout patterns using Flutter widgets",
-      "Orchestrated IPC between Flutter runtime and Python CLI binaries",
-      "Built and tested across Linux (Ubuntu) and Windows desktop environments"
+      "Frontend: Flutter, Material 3, file_picker",
+      "Backend & IPC: Python CLI binary, subprocess communication, base64 JSON config",
+      "Audio Engine: NumPy, Fast Fourier Transform (FFT), Hanning window",
+      "Rendering & Media: OpenCV (cv2), FFmpeg, yt-dlp"
     ]
   },
   {
     id: "flutter-slider",
     title: "Custom Flutter Slider Widget",
-    shortDescription: "Interactive custom slider component exploring stateful widget animations and touch gestures in Flutter.",
-    fullDescription: "A focused UI exploration building custom interactive controls in Flutter. Implements customized slider tracks, thumb rendering, dynamic value indicators, and reactive state updates.",
+    shortDescription: "My very first personal project—built completely without AI, fueled by stubbornness, and made for my girlfriend.",
+    fullDescription: "This was my first-ever personal project stepping away from traditional academic code. Worried about getting stuck learning legacy bank-backend software, I wanted to build real things instead of just maintaining them. I picked up Flutter because I use Google apps a lot and it felt lighter than React. This project was a brutally painful journey where I refused to use AI and wrote about 98% of it completely from scratch. It's definitely rough around the edges and a bit 'dodgy', but my girlfriend asked me to make it for her, and building it taught me one valuable lesson: I am genuinely willing to push through the pain to learn how to code.",
     tags: ["Flutter", "UI/UX", "Mobile"],
     github: "https://github.com/Rexilash/Slider-Application",
     demo: "#",
     media: [
-      "assets/final/SliderEdit.png"
+      "assets/SliderEdit.png"
     ],
     highlights: [
-      "Built custom painted widget components (`CustomPainter`)",
-      "Handled dynamic gesture detection and reactive state updates",
-      "Explored smooth UI physics and micro-animations"
+      "Frontend Framework: Flutter, Material 3, Dart",
+      "State Management & Architecture: StatefulWidgets, GlobalKeys for cross-widget communication",
+      "Custom Painting & UI: CustomPainter, Canvas API, custom math scaling, RotatedBox",
+      "Persistence & Interactivity: shared_preferences, file_picker, flutter_colorpicker, flutter_svg"
     ]
   },
   {
     id: "AI Expense Tracker Test",
     title: "Prompt-to-Structured JSON Tool",
-    shortDescription: "LLM utility leveraging the Gemini API to transform unstructured text into validated JSON data.",
-    fullDescription: "An exploration into practical AI integration and output parsing. Accepts unstructured natural language prompts, routes requests through the Gemini API using structured schemas, and returns clean, validated JSON ready for table display or data export.",
+    shortDescription: "A textbook definition of coding 'slop'—boring, un-ambitious, but taught me how to handle API schemas.",
+    fullDescription: "Honestly, this is by far the most boring project I've ever worked on. I built it purely because I ran out of ideas and picked a cookie-cutter concept just to have something on the screen. A part of me is a little embarrassed by how un-ambitious it is. The only redeeming factor is that it forced me to figure out basic AI implementation, API streaming, and JSON schema validation. It's rough, it's generic, but it was a stepping stone in learning how models handle structured outputs.",
     tags: ["Python", "Gemini API", "JSON", "CLI"],
     github: "https://github.com/Rexilash/AI-Budgeting-App",
     demo: "#",
     media: [
-      "assets/final/BudgetPlannerEdit.png"
+      "assets/BudgetPlannerEdit.png"
     ],
     highlights: [
-      "Configured authenticated API streaming with Gemini",
-      "Enforced JSON schema validation for deterministic outputs",
-      "Zero build dependency architecture"
+      "Frontend Framework: Flutter, Material 3, Google Fonts & custom styling",
+      "AI Integration & NLP: Google Generative AI (`google_generative_ai`, `google-generativeai`), Gemini 2.5 Flash model",
+      "Backend & Serverless: Firebase Cloud Functions (`https_fn`), Firebase Admin SDK, Cloud Firestore",
+      "Utilities & External APIs: Frankfurter API for server-side multi-currency conversion to USD, asset bundle config parsing"
     ]
   },
   {
     id: "CodePacker",
     title: "Codebase Packer",
-    shortDescription: "Zero-dependency CLI tool that aggregates multi-file project directories into clean Markdown context for LLMs.",
-    fullDescription: "A developer utility built to solve a real-world workflow bottleneck—manually gathering file trees and code snippet context for AI prompts. Recursively traverses project directories, strips ignored files, and generates a unified Markdown document formatted for LLM consumption.",
+    shortDescription: "A simple Python CLI tool born from my frustration with AI pair programming workflows—still use it every day.",
+    fullDescription: "I built this because I was going crazy trying to manually feed multiple code files into AI chat windows. I prefer treating AI like a sounding board for advice and boilerplate rather than having it act like an automated employee. These days I know the plan and just let Gemini draft the boilerplate while I test and verify everything. To speed up feeding context to the model, I wrote a basic Python script that walks through project directories and compiles code files into a single document. It's very simple, but it sped up my workflow tremendously, and I still use it to this day.",
     tags: ["Python", "CLI", "Linux", "Bash"],
     github: "https://github.com/Rexilash/CodePacker",
     demo: "#",
-    media: [],
+    media: [
+      "assets/CodePackerEdit.png"
+    ],
     highlights: [
-      "Built for terminal-first execution using standard library (`pathlib`, `argparse`)",
-      "Recursive file system optimization for POSIX/Linux file paths",
-      "Executable via custom Bash shell scripts and CLI flags"
+      "Language & Core Modules: Python 3, pathlib, argparse, sys",
+      "Filesystem Operations: Recursive directory traversal (rglob), path resolution and relative path mapping",
+      "Text Processing: UTF-8 encoding handling, UnicodeDecodeError filtering, dynamic markdown fence extension matching",
+      "Execution Environment: CLI-first script executed via POSIX/Linux terminal and custom Bash workflows"
+    ]
+  },
+  {
+    id: "cpu-affinity-setter",
+    title: "Lightweight CPU Affinity Setter",
+    shortDescription: "A quick Python/Tkinter GUI I built so I wouldn't have to keep messing with Task Manager for older games.",
+    fullDescription: "Deus Ex: Mankind Divided kept bugging out on my laptop because my CPU was too high-end for its older engine. Instead of manually opening Task Manager every single time to set CPU affinity, I put together a lightweight GUI utility using Python and Tkinter. It forced the game onto specific cores, and sure enough, the new areas finally loaded—even if the performance was a bit wonky for obvious reasons. A handy little tool born purely out of gaming frustration.",
+    tags: ["Python", "Tkinter", "Systems", "Desktop"],
+    github: "https://github.com/Rexilash/AffinitySetter",
+    demo: "#",
+    media: [
+      "assets/AffinitySetterEdit.png"
+    ],
+    highlights: [
+      "GUI Framework: Python, Tkinter, ttk (themed widgets)",
+      "System Monitoring & OS Management: psutil library for process iteration, PID mapping, and CPU core count detection",
+      "Process Control: Low-level OS CPU affinity configuration (`cpu_affinity()`) to manage process threading constraints",
+      "Error Handling: Exception management for restricted access processes (`AccessDenied`) and terminated tasks (`NoSuchProcess`)"
     ]
   }
 ];
